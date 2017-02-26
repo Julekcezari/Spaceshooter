@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://sprites/bg.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Menus.gd" type="Script" id=2]
+[ext_resource path="res://fonts/256 bytes.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://Scenes/starts.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+
+transform/pos = Vector2( 509.093, 305.223 )
+transform/scale = Vector2( 1.02609, 1.02934 )
+texture = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 247.0
+margin/top = 6.0
+margin/right = 811.0
+margin/bottom = 598.0
+alignment = 0
+script/script = ExtResource( 2 )
+
+[node name="Startgame" type="MenuButton" parent="VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 564.0
+margin/bottom = 194.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 0
+shortcut = null
+text = "Start"
+flat = true
+items = [  ]
+
+[node name="Credits" type="MenuButton" parent="VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 198.0
+margin/right = 564.0
+margin/bottom = 392.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 0
+shortcut = null
+text = "Credits"
+flat = true
+items = [  ]
+
+[node name="Quit" type="MenuButton" parent="VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 396.0
+margin/right = 564.0
+margin/bottom = 592.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 0
+shortcut = null
+text = "Quit"
+flat = true
+items = [  ]
+
+[node name="Sprite 2" parent="." instance=ExtResource( 4 )]
+
+[connection signal="pressed" from="VBoxContainer/Startgame" to="VBoxContainer" method="_on_Startgame_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/Credits" to="VBoxContainer" method="_on_Credits_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer" method="_on_Quit_pressed"]
+
+
